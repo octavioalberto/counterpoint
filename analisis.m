@@ -1,8 +1,10 @@
 function R = analisis(M, K, simetrias)
 
+% R = analisis(M,K,simetrias)
+%
 % Calcula el número de simetrías de contrapunto que median entre las transiciones de
+% intervalos de contrapunto que aparecen en M. La fila 1 debe corresponder al cantus
 % firmus, mientras que la fila 2 a los intervalos con el discanto.
-% intervalos de contrapunto que aparecen en M; la fila 1 debe corresponder al cantus
 % Si se proporcionan los parámetros K y simetrias, usa a K como las consonancias,
 % y en el arreglo simetrias deben aparecer las simetrias de contrapunto de cada
 % intervalo, cada una como una fila de la forma [a b c], que corresponde a e^(0,c).(a,b).
@@ -57,7 +59,7 @@ for w = [1:columns(M)-1]
  
  for l = [1:rows(simetrias{cual})]
  
-% Extrae la simetría en forma de la matriz L y el vector t.
+% Extrae la simetría en forma de la matriz Q y el vector t.
  
   Q = [simetrias{cual}(l,1) 0; simetrias{cual}(l,2) simetrias{cual}(l,1)];
   t = [M(1,w); simetrias{cual}(l,3)];
